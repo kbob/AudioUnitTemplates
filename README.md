@@ -12,7 +12,7 @@ implemented.
 Open Xcode.  Create a new project.  Select Audio Unit as the project
 category, then select the type of unit.
 
-See the [url]Audio Unit Programming Guide[/url] for more information.
+See the [Audio Unit Programming Guide](https://developer.apple.com/library/mac/documentation/MusicAudio/Conceptual/AudioUnitProgrammingGuide/Introduction/Introduction.html) for more information.
 
 ## How to Install
 
