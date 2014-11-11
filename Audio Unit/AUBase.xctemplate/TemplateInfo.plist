@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.example.dt.unit.audiounit.aubase</string>
+    <key>Ancestors</key>
+    <array>
+      <string>com.apple.dt.unit.bundleBase</string>
+      <string>com.apple.dt.unit.osxBase</string>
+    </array>
+<!-- default
+    <key>Concrete</key>
+    <false/>
+  -->
+<!-- abstract
+    <key>Description</key>
+    <string>Abstract base class for Audio Unit templates.</string>
+  -->
+<!-- abstract
+    <key>SortOrder</key>
+    <integer>3</integer>
+  -->
+
+    <key>Targets</key>
+    <array>
+      <dict>
+	<key>ProductType</key>
+	<string>com.apple.product-type.bundle</string>
+	<key>TargetIdentifier</key>
+	<string>com.example.audiounit</string>
+	<key>SharedSettings</key>
+	<dict>
+          <key>INSTALL_PATH</key>
+          <string>$(USER_LIBRARY_DIR)/Audio/Plug-Ins/Components</string>
+          <key>SKIP_INSTALL</key>
+          <string>YES</string>
+	  <key>WRAPPER_EXTENSION</key>
+	  <string>component</string>
+	  <key>COMBINE_HIDPI_IMAGES</key>
+	  <string>YES</string>
+          <!-- No pch files
+               <key>GCC_PREFIX_HEADER</key>
+               <string>___PACKAGENAME___/Prefix.pch</string>
+               <key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+               <string>YES</string>
+          -->
+	</dict>
+	<key>BuildPhases</key>
+	<array>
+	  <dict>
+	    <key>Class</key>
+	    <string>Sources</string>
+	  </dict>
+	  <dict>
+	    <key>Class</key>
+	    <string>Frameworks</string>
+	  </dict>
+	  <dict>
+	    <key>Class</key>
+	    <string>Resources</string>
+	  </dict>
+	</array>
+      </dict>
+    </array>
+
+    <key>Options</key>
+    <array>
+      <dict>
+	<key>Identifier</key>
+	<string>audioUnitType</string>
+	<key>Name</key>
+	<string>Audio Unit Type Code:</string>
+	<key>Description</key>
+	<string>The four-character type code of this audio unit</string>
+	<key>Type</key>
+	<string>text</string>
+      </dict>
+      <dict>
+	<key>Identifier</key>
+	<string>audioUnitSubtype</string>
+	<key>Name</key>
+	<string>Audio Unit Subtype Code:</string>
+	<key>Description</key>
+	<string>The four-character subtype code of this audio unit</string>
+	<key>Type</key>
+	<string>text</string>
+	<key>NotPersisted</key>
+	<true/>
+      </dict>
+      <dict>
+	<key>Identifier</key>
+	<string>audioUnitManufacturer</string>
+	<key>Name</key>
+	<string>Audio Unit Manufacturer Code:</string>
+	<key>Description</key>
+	<string>The four-character manufacturer code of this audio unit</string>
+	<key>Type</key>
+	<string>text</string>
+	<key>Default</key>
+	<string>xmpl</string>
+      </dict>
+    </array>
+    <key>Nodes</key>
+    <array>
+      <string>Info.plist:audioComponent</string>
+      <string>Info.plist:NSHumanReadableCopyright</string>
+      <!-- No pch files
+           <string>Prefix.pch:objC:importCocoa</string>
+      -->
+    </array>
+
+    <key>Definitions</key>
+    <dict>
+      <key>Info.plist:audioComponent</key>
+      <string>&lt;key&gt;AudioComponents&lt;/key&gt;
+      &lt;array&gt;
+      &lt;dict&gt;
+      &lt;key&gt;description&lt;/key&gt;
+      &lt;string&gt;___PACKAGENAME___&lt;/string&gt;
+      &lt;key&gt;factoryFunction&lt;/key&gt;
+      &lt;string&gt;___PACKAGENAME___Factory&lt;/string&gt;
+      &lt;key&gt;name&lt;/key&gt;
+      &lt;string&gt;___PACKAGENAME___&lt;/string&gt;
+      &lt;key&gt;sandboxSafe&lt;/key&gt;
+      &lt;true/&gt;
+      &lt;key&gt;type&lt;/key&gt;
+      &lt;string&gt;___VARIABLE_audioUnitType___&lt;/string&gt;
+      &lt;key&gt;subtype&lt;/key&gt;
+      &lt;string&gt;___VARIABLE_audioUnitSubtype___&lt;/string&gt;
+      &lt;key&gt;manufacturer&lt;/key&gt;
+      &lt;string&gt;___VARIABLE_audioUnitManufacturer___&lt;/string&gt;
+      &lt;key&gt;version&lt;/key&gt;
+      &lt;integer&gt;65536&lt;/integer&gt;
+      &lt;/dict&gt;
+      &lt;/array&gt;
+      </string>
+    </dict>
+  </dict>
+</plist>
