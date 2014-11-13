@@ -1,0 +1,6 @@
+//
+// Prefix header for all source files.
+//
+
+#include <CoreAudio/CoreAudioTypes.h>
+#include <AudioUnit/AudioUnit.h>
