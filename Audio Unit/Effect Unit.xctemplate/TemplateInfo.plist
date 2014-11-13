@@ -63,33 +63,14 @@
     </array>
     <key>Nodes</key>
     <array>
-      <string>Info.plist:NSHumanReadableCopyright</string>
       <string>___PACKAGENAMEASIDENTIFIER___.h</string>
       <string>___PACKAGENAMEASIDENTIFIER___Version.h</string>
       <string>___PACKAGENAMEASIDENTIFIER___.cpp</string>
       <string>___PACKAGENAMEASIDENTIFIER____Prefix.pch</string>
-      <string>AUPublic/AUBase/AUBase.cpp</string>
-      <string>AUPublic/AUBase/AUBase.h</string>
-<!-- doesn't compile
-      <string>AUPublic/AUBase/AUDispatch.cpp</string>
-  -->
-      <string>AUPublic/AUBase/AUDispatch.h</string>
-      <string>AUPublic/AUBase/AUInputElement.cpp</string>
-      <string>AUPublic/AUBase/AUInputElement.h</string>
-      <string>AUPublic/AUBase/AUOutputElement.cpp</string>
-      <string>AUPublic/AUBase/AUOutputElement.h</string>
-      <string>AUPublic/AUBase/AUPluginDispatch.cpp</string>
-      <string>AUPublic/AUBase/AUPluginDispatch.h</string>
-      <string>AUPublic/AUBase/AUScopeElement.cpp</string>
-      <string>AUPublic/AUBase/AUScopeElement.h</string>
-      <string>AUPublic/AUBase/ComponentBase.cpp</string>
-      <string>AUPublic/AUBase/ComponentBase.h</string>
       <string>AUPublic/OtherBases/AUEffectBase.cpp</string>
       <string>AUPublic/OtherBases/AUEffectBase.h</string>
       <string>AUPublic/Utility/AUBaseHelper.cpp</string>
       <string>AUPublic/Utility/AUBaseHelper.h</string>
-      <string>AUPublic/Utility/AUBuffer.cpp</string>
-      <string>AUPublic/Utility/AUBuffer.h</string>
       <string>AUPublic/Utility/AUSilentTimeout.h</string>
       <string>PublicUtility/CAAtomic.h</string>
       <string>PublicUtility/CAAtomicStack.h</string>
@@ -199,26 +180,6 @@
       <dict>
         <key>Path</key>
         <string>AUPublic/Utility/AUBaseHelper.h</string>
-        <key>Group</key>
-        <array>
-          <string>AUPublic</string>
-          <string>Utility</string>
-        </array>
-      </dict>
-      <key>AUPublic/Utility/AUBuffer.cpp</key>
-      <dict>
-        <key>Path</key>
-        <string>AUPublic/Utility/AUBuffer.cpp</string>
-        <key>Group</key>
-        <array>
-          <string>AUPublic</string>
-          <string>Utility</string>
-        </array>
-      </dict>
-      <key>AUPublic/Utility/AUBuffer.h</key>
-      <dict>
-        <key>Path</key>
-        <string>AUPublic/Utility/AUBuffer.h</string>
         <key>Group</key>
         <array>
           <string>AUPublic</string>

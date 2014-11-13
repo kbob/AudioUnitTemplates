@@ -94,6 +94,8 @@
     <array>
       <string>Info.plist:audioComponent</string>
       <string>Info.plist:NSHumanReadableCopyright</string>
+      <string>AUPublic/AUBase/AUBase.cpp</string>
+      <string>AUPublic/AUBase/AUBase.h</string>
       <string>AUPublic/AUBase/AUDispatch.h</string>
       <string>AUPublic/AUBase/AUInputElement.cpp</string>
       <string>AUPublic/AUBase/AUInputElement.h</string>
@@ -105,6 +107,8 @@
       <string>AUPublic/AUBase/AUScopeElement.h</string>
       <string>AUPublic/AUBase/ComponentBase.cpp</string>
       <string>AUPublic/AUBase/ComponentBase.h</string>
+      <string>AUPublic/Utility/AUBuffer.cpp</string>
+      <string>AUPublic/Utility/AUBuffer.h</string>
       <!-- No pch files
            <string>Prefix.pch:objC:importCocoa</string>
       -->
@@ -274,6 +278,26 @@
         <array>
           <string>AUPublic</string>
           <string>AUBase</string>
+        </array>
+      </dict>
+      <key>AUPublic/Utility/AUBuffer.cpp</key>
+      <dict>
+        <key>Path</key>
+        <string>AUPublic/Utility/AUBuffer.cpp</string>
+        <key>Group</key>
+        <array>
+          <string>AUPublic</string>
+          <string>Utility</string>
+        </array>
+      </dict>
+      <key>AUPublic/Utility/AUBuffer.h</key>
+      <dict>
+        <key>Path</key>
+        <string>AUPublic/Utility/AUBuffer.h</string>
+        <key>Group</key>
+        <array>
+          <string>AUPublic</string>
+          <string>Utility</string>
         </array>
       </dict>
     </dict>
