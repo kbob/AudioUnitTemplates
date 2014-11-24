@@ -26,7 +26,7 @@
           <key>GCC_PRECOMPILE_PREFIX_HEADER</key>
           <string>YES</string>
           <key>GCC_PREPROCESSOR_DEFINITIONS</key>
-          <string>CA_USE_AUDIO_PLUGIN_ONLY $(inherited)</string>
+          <string>CA_USE_AUDIO_PLUGIN_ONLY CA_AUTO_MIDI_MAP $(inherited)</string>
 	</dict>
 	<key>BuildPhases</key>
 	<array>
@@ -109,7 +109,7 @@
       <string>PublicUtility/CAReferenceCounted.h</string>
       <string>PublicUtility/CAStreamBasicDescription.cpp</string>
       <string>PublicUtility/CAStreamBasicDescription.h</string>
-      <string>Publicutility/CAThreadSafeList.h</string>
+      <string>PublicUtility/CAThreadSafeList.h</string>
       <string>PublicUtility/CAVectorUnit.cpp</string>
       <string>PublicUtility/CAVectorUnit.h</string>
       <string>PublicUtility/CAVectorUnitTypes.h</string>
@@ -127,7 +127,7 @@
         <key>Group</key>
         <string>AU Source</string>
         <key>SortOrder</key>
-        <integer>1</integer>
+        <integer>-4</integer>
       </dict>
 
       <key>___PACKAGENAMEASIDENTIFIER___.cpp</key>
@@ -137,7 +137,7 @@
         <key>Group</key>
         <string>AU Source</string>
         <key>SortOrder</key>
-        <integer>2</integer>
+        <integer>-3</integer>
       </dict>
 
       <key>___PACKAGENAMEASIDENTIFIER___Version.h</key>
@@ -147,7 +147,7 @@
         <key>Group</key>
         <string>AU Source</string>
         <key>SortOrder</key>
-        <integer>3</integer>
+        <integer>-2</integer>
       </dict>
 
       <key>___PACKAGENAMEASIDENTIFIER____Prefix.pch</key>
@@ -155,7 +155,7 @@
         <key>Path</key>
         <string>___PACKAGENAMEASIDENTIFIER____Prefix.pch</string>
         <key>SortOrder</key>
-        <integer>999</integer>
+        <integer>-1</integer>
       </dict>
 
       <key>AUPublic/AUInstrumentBase/AUInstrumentBase.cpp</key>
@@ -554,13 +554,13 @@
           <string>PublicUtility</string>
         </array>
       </dict>
-      <key>Publicutility/CAThreadSafeList.h</key>
+      <key>PublicUtility/CAThreadSafeList.h</key>
       <dict>
         <key>Path</key>
-        <string>Publicutility/CAThreadSafeList.h</string>
+        <string>PublicUtility/CAThreadSafeList.h</string>
         <key>Group</key>
         <array>
-          <string>Publicutility</string>
+          <string>PublicUtility</string>
         </array>
       </dict>
       <key>PublicUtility/CAVectorUnit.cpp</key>
