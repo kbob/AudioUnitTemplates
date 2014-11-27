@@ -45,8 +45,8 @@ struct ___PACKAGENAMEASIDENTIFIER___Note : public SynthNote {
                             UInt32            inOutBusCount);
 
  private:
-        double phase, amp, maxamp;
-        double up_slope, dn_slope, fast_dn_slope;
+    double phase, amp, maxamp;
+    double up_slope, dn_slope, fast_dn_slope;
 
 };
 

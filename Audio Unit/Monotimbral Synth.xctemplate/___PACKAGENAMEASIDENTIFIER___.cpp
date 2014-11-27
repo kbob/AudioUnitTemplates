@@ -115,9 +115,9 @@ AUElement* ___PACKAGENAMEASIDENTIFIER___::CreateElement(AudioUnitScope   scope,
     }
 }
 
-OSStatus ___PACKAGENAMEASIDENTIFIER___::GetParameterInfo(AudioUnitScope           inScope,
-                                    AudioUnitParameterID     inParameterID,
-                                    AudioUnitParameterInfo & outParameterInfo)
+OSStatus ___PACKAGENAMEASIDENTIFIER___::GetParameterInfo(AudioUnitScope          inScope,
+                                    AudioUnitParameterID    inParameterID,
+                                    AudioUnitParameterInfo &outParameterInfo)
 {
     AudioUnitParameterInfo& info = outParameterInfo;
     info.flags = (kAudioUnitParameterFlag_IsWritable |
@@ -129,27 +129,21 @@ OSStatus ___PACKAGENAMEASIDENTIFIER___::GetParameterInfo(AudioUnitScope         
     switch (inParameterID) {
 
     // case kParam_One:
-    //     info.flags = kAudioUnitParameterFlag_DisplaySquareRoot;
-    //     info.flags |= kAudioUnitParameterFlag_IsWritable;
-    //     info.flags |= kAudioUnitParameterFlag_IsReadable;
-
-    //     AUBase::FillInParameterName (info, kGlobalVolumeName, false);
-    //     info.unit = kAudioUnitParameterUnit_LinearGain;
-    //     info.minValue = 0;
-    //     info.maxValue = 1.0;
+    //     AUBase::FillInParameterName (info, kParamName_One, false);
+    //     info.unit         = kAudioUnitParameterUnit_LinearGain;
+    //     info.minValue     = 0.0;
+    //     info.maxValue     = 1.0;
     //     info.defaultValue = 1.0;
+    //     info.flags       |= kAudioUnitParameterFlag_DisplaySquareRoot;
     //     break;
 
     // case kParam_Two:
-    //     info.flags = kAudioUnitParameterFlag_DisplaySquareRoot;
-    //     info.flags |= kAudioUnitParameterFlag_IsWritable;
-    //     info.flags |= kAudioUnitParameterFlag_IsReadable;
-
-    //     AUBase::FillInParameterName (info, kGlobalVolumeName, false);
-    //     info.unit = kAudioUnitParameterUnit_LinearGain;
-    //     info.minValue = 0;
-    //     info.maxValue = 1.0;
+    //     AUBase::FillInParameterName (info, kParamName_Two, false);
+    //     info.unit         = kAudioUnitParameterUnit_Generic;
+    //     info.minValue     = 0.0;
+    //     info.maxValue     = 1.0;
     //     info.defaultValue = 1.0;
+    //     info.flags       |= kAudioUnitParameterFlag_DisplaySquareRoot;
     //     break;
 
     default:
@@ -242,7 +236,7 @@ OSStatus ___PACKAGENAMEASIDENTIFIER___Note::Render(UInt64           inAbsoluteSa
     case kNoteState_Sostenutoed :
     case kNoteState_ReleasedButSostenutoed :
     case kNoteState_ReleasedButSustained :
-        for (UInt32 frame=0; frame<inNumFrames; frame++) {
+        for (UInt32 frame = 0; frame < inNumFrames; frame++) {
             if (amp < maxamp)
                 amp += up_slope;
             float sp = sinf(phase);
@@ -261,7 +255,7 @@ OSStatus ___PACKAGENAMEASIDENTIFIER___Note::Render(UInt64           inAbsoluteSa
     case kNoteState_Released :
         {
             UInt32 endFrame = 0xFFFFFFFF;
-            for (UInt32 frame=0; frame<inNumFrames; frame++) {
+            for (UInt32 frame = 0; frame < inNumFrames; frame++) {
                 if (amp > 0.0)
                     amp += dn_slope;
                 else if (endFrame == 0xFFFFFFFF)
@@ -288,7 +282,7 @@ OSStatus ___PACKAGENAMEASIDENTIFIER___Note::Render(UInt64           inAbsoluteSa
     case kNoteState_FastReleased :
         {
             UInt32 endFrame = 0xFFFFFFFF;
-            for (UInt32 frame=0; frame<inNumFrames; ++frame) {
+            for (UInt32 frame = 0; frame < inNumFrames; ++frame) {
                 if (amp > 0.0)
                     amp += fast_dn_slope;
                 else if (endFrame == 0xFFFFFFFF)
