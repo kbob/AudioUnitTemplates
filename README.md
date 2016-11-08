@@ -2,10 +2,9 @@
 
 Easily create Audio Units in Xcode.
 
-
 These templates customize Xcode's New Project dialog to create Audio
-Unit projects.  At the moment, only Audio Effect units are
-implemented.
+Unit projects.  At the moment, only Audio Effect and Monotimbral Synth
+units are implemented.
 
 ## How to Use
 

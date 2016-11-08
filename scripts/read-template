@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+import fileinput
+import pprint
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+
+
+def hands_of_blue(seq):
+    for i, item in enumerate(seq):
+        if i % 2 == 0:
+            prev = item
+        else:
+            yield (prev, item)
+            del prev
+    assert 'prev' not in locals()
+
+
+class PList:
+    def __init__(self, node):
+        self.tag = node.tag
+        self.attrib = node.attrib
+        self.children = [type(self).from_XML_tree(c) for c in node]
+
+    def __iter__(self):
+        return iter(self.children)
+
+    def __str__(self):
+        return 'PList' + str(self.attrib)
+
+    @classmethod
+    def from_XML_tree(cls, node):
+        if node.tag == 'plist':
+            return cls(node)
+        if node.tag == 'dict':
+            return dict((k.text, cls.from_XML_tree(v))
+                        for (k, v) in hands_of_blue(node))
+        elif node.tag == 'array':
+            return [cls.from_XML_tree(child) for child in node]
+        elif node.tag == 'string':
+            return str(node.text)
+        elif node.tag == 'integer':
+            return int(node.text)
+        elif node.tag == 'real':
+            return float(node.text)
+        elif node.tag == 'true':
+            return True
+        elif node.tag == 'false':
+            return False
+        else:
+            assert False, node.tag
+
+
+def process_stream(s, name):
+    try:
+        e = ET.fromstringlist(s)
+    except:
+        print('XML error in ' + name, file=sys.stderr)
+        raise
+    ie = PList.from_XML_tree(e)
+    assert(type(ie) is PList)
+    assert(len(ie.children) == 1)
+    assert(type(ie.children[0]) is dict)
+    pprint.pprint(ie.children[0])
+    # for k in ie.children[0]:
+    #     print(k)
+
+
+def process_file(file):
+    cmd = 'plutil -convert xml1 -o -'.split() + [file or '-']
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE) as proc:
+        process_stream(proc.stdout, file or 'standard input')
+
+
+def main(argv):
+    if len(argv) == 1:
+        process_file(None)
+    else:
+        for file in argv[1:]:
+            process_file(file)
+
+if __name__ == '__main__':
+    main(sys.argv)
